@@ -9,6 +9,7 @@ namespace ODataIntegration.Data.Extensions
 {
     public static class ProductExtensions
     {
-        public static async Task<List<Product>> GetProducts(this AppDbContext db) => await db.Products.ToListAsync();
+        public static async Task<List<Product>> GetProducts(this AppDbContext db) =>
+            await db.Products.ToListAsync();
     }
 }

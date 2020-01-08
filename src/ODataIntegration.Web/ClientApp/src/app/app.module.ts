@@ -10,18 +10,11 @@ import { ServicesModule } from './services.module';
 import { AppComponent } from './app.component';
 
 import { Routes, RouteComponents } from './routes';
-import { Components } from './components';
-import { Dialogs } from './dialogs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    [...RouteComponents],
-    [...Dialogs],
-    [...Components]
-  ],
-  entryComponents: [
-    [...Dialogs]
+    [...RouteComponents]
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
