@@ -1,0 +1,27 @@
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="productSvc.products$ | async as products else loading">
+  <mat-toolbar>OData Products</mat-toolbar>
+  <section fxLayout="column"
+           fxLayoutAlign="start stretch"
+           class="container">
+    <section fxLayout="row"
+             fxLayoutAlign="start center">
+      <mat-form-field fxFlex>
+        <mat-label>Query</mat-label>
+        <input matInput
+               [(ngModel)]="query" />
+      </mat-form-field>
+      <button mat-stroked-button
+              color="accent"
+              (click)="updateProducts()">Query Products</button>
+    </section>
+    <mat-list *ngIf="products.value?.length > 0">
+      <mat-list-item *ngFor="let p of products.value">{{p.id}} - {{p.name}}</mat-list-item>
+    </mat-list>
+    <p class="mat-subheading-2"
+       *ngIf="!(products.value?.length > 0)">No Products Found</p>
+  </section>
+</ng-container>
