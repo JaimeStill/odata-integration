@@ -31,7 +31,7 @@ Here are some example OData queries:
 
 ## Infrastructure
 
-> **NOTE**: Endpoint routing is [still not supported](https://devblogs.microsoft.com/odata) yet, so have to roll back to `.AddMvc()` and `.UseMvc()` in Startup.
+> **NOTE**: Endpoint routing is [still not supported](https://github.com/OData/WebApi/issues/1748#issuecomment-568610136) yet, so have to roll back to `.AddMvc()` and `.UseMvc()` in Startup.
 
 ### Entity Framework
 
